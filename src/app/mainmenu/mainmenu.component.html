@@ -1,0 +1,25 @@
+<div id="mainMenuContainer">
+  <h1 id="mainMenuTitle">Jeu de Golf</h1>
+  <br />
+  <img id="mainMenuImg" src="../assets/img/11_diamonds.png" />
+  <br />
+  <div id="formContainer">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span id="userNameLabel" class="input-group-text">Nom d&apos;usager:</span>
+      </div>
+      <input id="userNameInput" type="text" class="form-control" [formControl]="username"
+        aria-describedby="aria-describedby" placeholder="Ex: Bertrand">
+    </div>
+    <br />
+    <div id="buttonContainer">
+      <button id="joinGameButton" type="button" [disabled]="!username.valid" (click)="addPlayerToQueue()"
+        class="btn btn-primary btn-lg btn-block">Joindre une partie</button>
+    </div>
+  </div>
+  <br />
+  <div id="mainMenuFooter">
+    <p>Un jeu en ligne par Gabriel Cyr</p>
+    <p>Version 1.0.0</p>
+  </div>
+</div>

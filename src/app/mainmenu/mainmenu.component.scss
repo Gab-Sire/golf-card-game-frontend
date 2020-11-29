@@ -1,0 +1,42 @@
+#mainMenuTitle {
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+}
+
+#mainMenuImg {
+  display: block;
+  align-self: center;
+  margin: auto;
+}
+
+#mainMenuContainer {
+  width: 90%;
+  background-color: black;
+  border: 2px green solid;
+  display: block;
+  align-self: center;
+  margin: auto;
+}
+
+#buttonContainer {
+  margin: auto;
+  width: 30%;
+  display: block;
+  align-self: center;
+  border: 2px black solid;
+}
+
+#mainMenuFooter {
+  text-align: center;
+  color: white;
+  padding-bottom: 40px;
+}
+
+#userNameLabel {
+  text-align: center;
+}
+
+#userNameInput {
+  width: 60%;
+}
