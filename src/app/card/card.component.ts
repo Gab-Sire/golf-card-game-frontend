@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Card, constructedCards } from './card.pojo'
-import { CardService } from './card.service';
+import Card from '../model/card'
+import { BackendCardService  } from '../service/backend-card.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  providers:  [ CardService ]
 })
 export class CardComponent implements OnInit {
 

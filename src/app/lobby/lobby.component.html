@@ -1,0 +1,13 @@
+<div>
+    <h1>Salon des joueurs</h1>
+    <table *ngFor="let player of players">
+        <tr>
+            <td>{{ player.name }}</td>
+            <td>
+                <div *ngIf="player.isReady" class="readyBubble">Pret</div>
+                <div *ngIf="!player.isReady" class="waitingBubble">En attente</div>
+            </td>
+        </tr>
+    </table>
+    <button id="joinGameBtn" type="button" class="btn btn-primary btn-lg btn-block" (click)="joinGame()">Pret a jouer!</button>
+</div>

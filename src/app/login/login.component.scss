@@ -1,16 +1,16 @@
-#mainMenuTitle {
+#loginTitle {
   text-align: center;
   color: white;
   padding-top: 30px;
 }
 
-#mainMenuImg {
+#loginImg {
   display: block;
   align-self: center;
   margin: auto;
 }
 
-#mainMenuContainer {
+#loginContainer {
   width: 90%;
   background-color: black;
   border: 2px green solid;
@@ -19,7 +19,7 @@
   margin: auto;
 }
 
-#buttonContainer {
+#btnContainer {
   margin: auto;
   width: 30%;
   display: block;
@@ -27,7 +27,7 @@
   border: 2px black solid;
 }
 
-#mainMenuFooter {
+#loginFooter {
   text-align: center;
   color: white;
   padding-bottom: 40px;
