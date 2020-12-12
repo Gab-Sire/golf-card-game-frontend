@@ -14,9 +14,8 @@ const POLLING_INTERVAL: number = 3000;
 })
 export class LobbyComponent implements OnInit {
 
-  players$: Observable<any> = new Observable();
-  players: any;
-  subscription: Subscription;
+  players: Player[];
+  subscription: Subscription = new Subscription();
 
   constructor(private backendPlayer: BackendPlayerService, private router: Router) {
   }
@@ -27,15 +26,15 @@ export class LobbyComponent implements OnInit {
 
   pollPlayers() {
     console.log("Polling payers:");
-    this.subscription = interval(3000).pipe(
+    this.subscription = interval(POLLING_INTERVAL).pipe(
       startWith(0),
       switchMap(() => this.backendPlayer.getQueuedPlayers()),
-      tap(res => console.log("Response: " + res.body))
-    ).subscribe(res => this.players = res.body, 
+      tap(res => console.log("Response: " + res))
+    ).subscribe((res: Player[]) => this.players = res,
       err => console.log("Http error: ", err));
   }
 
-  public joinGame(){
+  public joinGame() {
     this.router.navigateByUrl('/game').then(
       () => console.log("Successfully transferred to game")
     );

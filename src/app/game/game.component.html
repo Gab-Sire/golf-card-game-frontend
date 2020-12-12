@@ -1,0 +1,24 @@
+<div id="gameContainer">
+  <header id="playerUI"></header>
+  <div id="cardTable">
+    <div class="cardsRow">
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[0].imgName }}" (click)="clickOnCard(0)" />
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[1].imgName }}" (click)="clickOnCard(1)" />
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[2].imgName }}" (click)="clickOnCard(2)" />
+      <!-- <p>subscribe => ../assets/img/{{ currentDeckCard.imgName }}</p> -->
+      <img id="cardDeck" class="cardSlot" src="../assets/img/{{ currentDeckCard.imgName }}" (click)="clickOnDeckCard()" />
+      <button id="drawBtn" type="button" (click)="drawDeck()">Piger</button>
+    </div>
+    <div class="cardsRow">
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[3].imgName }}" (click)="clickOnCard(3)" />
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[4].imgName }}" (click)="clickOnCard(4)" />
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[5].imgName }}" (click)="clickOnCard(5)" />
+      <img id="cardGraveyard" class="cardSlot" src="../assets/img/{{ currentGraveyardCard.imgName }}" (click)="clickOnGraveyardCard()" />
+    </div>
+    <div class="cardsRow">
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[6].imgName }}" (click)="clickOnCard(6)" />
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[7].imgName }}" (click)="clickOnCard(7)" />
+      <img class="cardSlot" src="../assets/img/{{ currentPlayerCards[8].imgName }}" (click)="clickOnCard(8)" />
+    </div>
+  </div>
+</div>

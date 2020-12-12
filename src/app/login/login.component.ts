@@ -1,7 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { BackendPlayerService } from '../service/backend-player.service'
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BackendPlayerService } from '../service/backend-player.service';
 
 @Component({
   selector: 'app-login',
@@ -9,15 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
+
   username: FormControl;
 
-  @Output() startPollingEvent = new EventEmitter<boolean>();
-
-  notifyParentOfPolling(): void {
-    this.startPollingEvent.next(true);
-  }
-  
   constructor(private backendPlayer: BackendPlayerService, private router: Router) { }
 
   ngOnInit(): void {
@@ -32,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.joinPlayerLobby();
   }
 
-  public joinPlayerLobby(){
+  public joinPlayerLobby() {
     this.router.navigateByUrl('/lobby').then(
       () => console.log("Successfully transferred to lobby")
     );

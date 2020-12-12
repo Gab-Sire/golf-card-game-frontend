@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Player from '../model/player'
-import { Observable, Subject, Subscriber } from 'rxjs';
+import { Injectable } from '@angular/core';
+import Player from '../model/player';
 
 const server_url: string = 'http://localhost:3000/';
 const addPlayerToQueueUri: string = "add-player-to-queue";
@@ -24,7 +23,7 @@ export class BackendPlayerService {
     let player: Player = new Player();
     player.name = username;
 
-    this.client.post(server_url + addPlayerToQueueUri, player).subscribe((data) => {
+    this.client.post(server_url + addPlayerToQueueUri, player).subscribe(() => {
       console.log("Successfully added player to queue");
       this.clientPlayer = player;
     }, err => {
@@ -33,7 +32,7 @@ export class BackendPlayerService {
   }
 
   public getQueuedPlayers() {
-    return this.client.get(server_url + getQueuedPlayerList, { observe: 'response' });
+    return this.client.get(server_url + getQueuedPlayerList);
   }
 
   public getGamePlayers(): Player[] {

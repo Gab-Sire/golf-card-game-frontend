@@ -1,4 +1,9 @@
 export default class Card {
-    img_name: string;
+    imgName: string;
     value: number;
+
+    constructor(imgName: string, value: number){
+        this.imgName = imgName;
+        this.value = value;
+    }
 }
