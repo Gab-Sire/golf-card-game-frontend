@@ -1,20 +1,23 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { LoginComponent } from './login.component';
 
-import { MainmenuComponent } from './login.component';
 
-describe('MainmenuComponent', () => {
-  let component: MainmenuComponent;
-  let fixture: ComponentFixture<MainmenuComponent>;
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainmenuComponent ]
+      declarations: [ LoginComponent ],
+      imports: [RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainmenuComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

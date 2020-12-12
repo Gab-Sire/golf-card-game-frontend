@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LobbyComponent as LobbyComponent } from './lobby/lobby.component';
 import { Routes, RouterModule } from '@angular/router';
 import { GameComponent } from './game/game.component';
+import { BackendPlayerService } from './service/backend-player.service';
+import { BackendGameService } from './service/backend-game.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,7 +35,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [ BackendPlayerService, BackendGameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
